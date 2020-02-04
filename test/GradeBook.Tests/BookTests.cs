@@ -7,7 +7,7 @@ namespace GradeBook.Tests
     public class BookTests
     {
         [Fact]
-        public void Test1()
+        public void BookCalculatesStats()
         {
             // arrange portion -- staging the data and variables you want to test
             var book = new Book("");
