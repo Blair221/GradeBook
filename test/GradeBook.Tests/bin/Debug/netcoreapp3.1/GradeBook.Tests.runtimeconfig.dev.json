@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\obliv\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\obliv\\.nuget\\packages"
+    ]
+  }
+}
