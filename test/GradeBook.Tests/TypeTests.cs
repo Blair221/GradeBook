@@ -4,8 +4,38 @@ using Xunit;
 
 namespace GradeBook.Tests
 {
+
+    public delegate string WriteLogDelegate(string logMessage);
+
     public class TypeTests
-    {   
+    {
+        [Fact]
+        public void WriteLogDelegateCanPointToMethod()
+        {
+            WriteLogDelegate log;
+
+            var result = log("Hello");
+        }
+        string ReturnMessage(string message)
+        {
+            return message;
+        }
+
+        [Fact]
+        public void StringsBehaveLikeValueTypes()
+        {
+            string name = "Blair";
+            var upperName = MakeUpperCase(name);
+
+            Assert.Equal("Blair", name);
+            Assert.Equal("BLAIR", upperName);
+        }
+
+        private string MakeUpperCase(string parameter)
+        {
+           return parameter.ToUpper();
+        }
+
         [Fact]
         public void CSharpCanPassByRefWithTheOutKeyword()
         {
@@ -16,7 +46,7 @@ namespace GradeBook.Tests
         }
 
         private void GetBookSetNameByRefWithOutKeyword(out Book book, string name)
-        {   
+        {
             book = new Book(name);
         }
 
@@ -30,7 +60,7 @@ namespace GradeBook.Tests
         }
 
         private void GetBookSetNameByRef(ref Book book, string name)
-        {   
+        {
             book = new Book(name);
         }
 
@@ -44,7 +74,7 @@ namespace GradeBook.Tests
         }
 
         private void GetBookSetName(Book book, string name)
-        {   
+        {
             book = new Book(name);
         }
 
