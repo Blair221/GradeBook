@@ -7,7 +7,9 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            Book book = new DiskBook("Blair's GradeBook");
+            Console.WriteLine("What's the name of the teacher that will be using this GradeBook?");
+            var teacher = Console.ReadLine();
+            Book book = new DiskBook($"{teacher}'s GradeBook");
             book.GradeAdded += OnGradeAdded;
             EnterGrades(book);
 
@@ -47,7 +49,7 @@ namespace GradeBook
                 }
                 finally
                 {
-                    Console.WriteLine("**");
+                    Console.WriteLine("--------------");
                 }
             }
         }
